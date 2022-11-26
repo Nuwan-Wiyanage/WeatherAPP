@@ -1,0 +1,8 @@
+<div class="wrapper">
+    <mat-progress-spinner
+            class="mt-5"
+            [color]="color"
+            [mode]="mode"
+            [value]="value" *ngIf="this.loaderService.getLoaderStatus()">
+    </mat-progress-spinner>
+</div>
