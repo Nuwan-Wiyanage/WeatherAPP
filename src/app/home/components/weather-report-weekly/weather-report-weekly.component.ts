@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Daily, OpenWeatherApiResponse } from 'src/app/core/models/openweather-api.model';
 
 @Component({
   selector: 'app-weather-report-weekly',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./weather-report-weekly.component.scss']
 })
 export class WeatherReportWeeklyComponent implements OnInit {
+  @Input() data: OpenWeatherApiResponse | any;
+  dailyWeather: Daily[] | any;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.dailyWeather = this.data ? this.data.daily : [];
   }
 
 }

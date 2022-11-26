@@ -1,0 +1,16 @@
+:host {
+    justify-content: center;
+    position: relative;
+}
+
+.daily-item{
+    display: inline-block !important;
+    text-align: center;
+    margin: 10px;
+    padding: 5px;
+    background: linear-gradient(45deg, cadetblue, transparent);
+}
+
+.week-forecast{
+    text-align: center !important;
+}

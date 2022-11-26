@@ -1,1 +1,40 @@
-<p>weather-report-today works!</p>
+<div class="col-md-12">
+    <div class="card" style="border-radius: 10px;">
+        <div *ngIf="data">
+            <div class="bg-image ripple" data-mdb-ripple-color="light"
+                style="border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                <div class="d-inline-block">
+                    <img src="{{data.image}}" class="weather-icon" />
+                </div>
+                <div class="other-data d-inline-block">
+                    <div class="other-item">
+                        <h2 class="medium-text">Humidity</h2>
+                        <i class="fa fa-tint"></i>
+                        <p class="large-text-semibold mb-2">
+                            {{ data.current?.humidity }} <span class="small-text">%</span>
+                        </p>
+                        <p class="medium-text mb-2">{{ data.current?.humidity | humidityRange }}</p>
+                    </div>
+                    <hr>
+                    <div class="other-item">
+                        <h2 class="medium-text">UV index</h2>
+                        <i class="fa fa-thermometer-half"></i>
+                        <p class="large-text-semibold mb-2">{{ data.current?.uvi }}</p>
+                        <p class="medium-text mb-2">{{ data.current?.uvi | uvIndex }}</p>
+                    </div>
+                </div>
+                <div class="mask" style="background-color: rgba(0,0,0,.45)">
+                    <div class="text-center text-white">
+                        <p class="h3 pt-2 mb-4">{{data.current?.weather[0].description | titlecase}}</p>
+                        <p class="h5 mb-4">{{data.name}}, Today: {{today | date }}</p>
+                        <p class="display-2"><strong>{{data.current?.temp | number:'0.0-0'}}°C</strong> </p>
+                        <p class="pb-4">
+                            <span>Feels like </span>
+                            <span>{{data.current?.feels_like | number: '0.0-0'}} °C</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

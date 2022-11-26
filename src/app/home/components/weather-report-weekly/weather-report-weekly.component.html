@@ -1,1 +1,33 @@
-<p>weather-report-weekly works!</p>
+<div class="col-md-12">
+    <div class="card" style="border-radius: 10px;" *ngIf="dailyWeather.length>0">
+        <mat-tab-group headerPosition="below">
+            <mat-tab label="Week">
+                <div class="week-forecast">
+                    <div *ngFor="let daily of dailyWeather; first as isFirst" class="widget card daily-item">
+                        <div class="main">
+                            <div class="date">
+                                <div class="day normal-text-bold">
+                                    {{ isFirst ? "Today" : (daily.dt) | customDate: "EEE, MMM d" }}
+                                </div>
+                                <div class="desc small-text-medium">
+                                    {{ daily.weather[0].description | titlecase }}
+                                </div>
+                            </div>
+                            <img [src]="'http://openweathermap.org/img/wn/'+ daily.weather[0].icon +'@2x.png'"
+                                width="64" height="64" alt="Weather Illustration" /> 
+                        </div>
+                        <div class="temp">
+                            <p class="max medium-text-semibold">
+                                Max Temp: {{ daily.temp.max }} °C
+                            </p>
+                            <span>|</span>
+                            <p class="min medium-text-semibold">
+                                Min Temp: {{ daily.temp.min }} °C
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>

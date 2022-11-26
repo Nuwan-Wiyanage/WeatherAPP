@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { OpenWeatherApiResponse } from 'src/app/core/models/openweather-api.model';
 
 @Component({
   selector: 'app-weather-report-today',
@@ -6,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./weather-report-today.component.scss']
 })
 export class WeatherReportTodayComponent implements OnInit {
-
+  @Input() data: OpenWeatherApiResponse | any;
+  today: Date = new Date();
+  
   constructor() { }
 
   ngOnInit(): void {

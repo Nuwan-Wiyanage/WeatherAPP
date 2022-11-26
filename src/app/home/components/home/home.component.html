@@ -1,1 +1,8 @@
-<p>home works!</p>
+<div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center wrap-items">
+        <app-header (newLocationEvent)="onLocationChanged($event)" class="search-bar col-md-12"></app-header>
+        <app-loader></app-loader>
+        <app-weather-report-today [data]="data" *ngIf="!this.loaderService.getLoaderStatus()" class="col-md-4 mb-2"></app-weather-report-today>
+        <app-weather-report-weekly [data]="data" *ngIf="!this.loaderService.getLoaderStatus()" class="weekly-data-container"></app-weather-report-weekly>
+    </div>
+</div>
