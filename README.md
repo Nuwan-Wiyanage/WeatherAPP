@@ -1,14 +1,12 @@
 # WeatherAPP
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.9.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.9. This project uses bootstrap, angular material, fontawesome 4 and scss.
 
-## Development server
+## How to RUN on local Development server
+
+Run `npm install` to download all the dependencies.
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
