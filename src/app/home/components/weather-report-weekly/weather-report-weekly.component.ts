@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Daily, OpenWeatherApiResponse } from 'src/app/core/models/openweather-api.model';
+import { Daily } from 'src/app/core/models/daily.model';
+import { OpenWeatherApiResponse } from 'src/app/core/models/openweather-api.model';
 
 @Component({
   selector: 'app-weather-report-weekly',
